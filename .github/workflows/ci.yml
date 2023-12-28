@@ -123,6 +123,13 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
+      - name: pnpm install
+        uses: nick-fields/retry@v2.9.0
+        with:
+          max_attempts: 10
+          timeout_minutes: 15
+          retry_on: error
+          command: pnpm install --frozen-lockfile
       - name: Download All Artifacts
         uses: actions/download-artifact@v4
         with:
