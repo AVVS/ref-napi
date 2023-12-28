@@ -96,7 +96,6 @@ jobs:
     - name: prebuild
       run:  |
         pnpm prebuild --v8_enable_pointer_compression=false --v8_enable_31bit_smis_on_64bit_arch=false
-        if [[ ${{ runner.os }} == "Linux" ]]; then ARCH=ia32 pnpm prebuild --v8_enable_pointer_compression=false --v8_enable_31bit_smis_on_64bit_arch=false; fi
         tar --create --verbose --file=prebuild.tar --directory "prebuilds" .
     - name: Upload
       uses: actions/upload-artifact@v4
