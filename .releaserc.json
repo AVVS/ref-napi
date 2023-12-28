@@ -15,7 +15,7 @@
     }],
     "@semantic-release/npm",
     ["@semantic-release/github", {
-      "assets": [{ "path": "binary/*.tar" }]
+      "assets": [{ "path": "prebuilds/*/*.node" }]
     }]
   ]
 }
