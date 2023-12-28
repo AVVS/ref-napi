@@ -37,7 +37,8 @@
     "docs": "node docs/compile",
     "test": "nyc mocha --v8-expose-gc",
     "install": "node-gyp-build",
-    "prebuild": "prebuildify --napi --tag-armv"
+    "prebuild": "prebuildify --napi --tag-armv",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "debug": "^4.1.1",

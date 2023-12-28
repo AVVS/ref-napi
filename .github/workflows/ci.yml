@@ -100,7 +100,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: binary-${{ runner.os }}
-        path: prebuild
+        path: prebuilds
 
   release:
     name: Release
@@ -126,7 +126,7 @@ jobs:
       - name: Download All Artifacts
         uses: actions/download-artifact@v4
         with:
-          path: prebuild
+          path: prebuilds
           pattern: binary-*
           merge-multiple: true
       - name: Release
