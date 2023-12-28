@@ -61,5 +61,12 @@
     "prebuildify-ci": "^1.0.5",
     "semantic-release": "^22.0.12",
     "weak-napi": "^2.0.0"
-  }
+  },
+  "files": [
+    "prebuilds/",
+    "src/",
+    "lib/",
+    "include/",
+    "binding.gyp"
+  ]
 }
