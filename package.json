@@ -1,7 +1,8 @@
 {
   "name": "@makeomatic/ref-napi",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "description": "Turn Buffer instances into \"pointers\"",
   "engines": {
@@ -36,8 +37,7 @@
     "docs": "node docs/compile",
     "test": "nyc mocha --v8-expose-gc",
     "install": "node-gyp-build",
-    "prebuild": "prebuildify --napi --tag-armv",
-    "prepack": "prebuildify-ci download && ([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))"
+    "prebuild": "prebuildify --napi --tag-armv"
   },
   "dependencies": {
     "debug": "^4.1.1",
@@ -46,6 +46,9 @@
     "node-gyp-build": "^4.2.1"
   },
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
     "dox": "1.0.0",
     "highlight.js": "^11.9.0",
     "jade": "^1.11.0",
@@ -55,6 +58,7 @@
     "nyc": "^15.0.0",
     "prebuildify": "^5.0.1",
     "prebuildify-ci": "^1.0.5",
+    "semantic-release": "^22.0.12",
     "weak-napi": "^2.0.0"
   }
 }
